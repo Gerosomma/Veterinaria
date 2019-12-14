@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
             perMascotas = new persistenciaMascotas(this);
 
             Mascota mascota = perMascotas.buscarMascota(codigo, baseDatos);
-            Toast.makeText(this, mascota.getNombre(), Toast.LENGTH_LONG).show();
 
             Intent intentMascota = new Intent(this, DatosMascota.class);
 
@@ -53,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             intentMascota.putExtra("Nombre", mascota.getNombre());
 
             Toast.makeText(this, "Iniciando visor de datos.", Toast.LENGTH_LONG).show();
-            startActivityForResult(intentMascota, 1);
+            startActivity(intentMascota);
 
             System.out.println(mascota.toString());
 
