@@ -45,17 +45,20 @@ public class MainActivity extends AppCompatActivity {
             perMascotas = new persistenciaMascotas(this);
 
             Mascota mascota = perMascotas.buscarMascota(codigo, baseDatos);
+            if (mascota != null){
+                Intent intentMascota = new Intent(this, DatosMascota.class);
 
-            Intent intentMascota = new Intent(this, DatosMascota.class);
+                Bundle bundle= new Bundle();
+                bundle.putSerializable("mascota", mascota);
+                intentMascota.putExtras(bundle);
 
-            intentMascota.putExtra("Codigo", mascota.getCodigo());
-            intentMascota.putExtra("Nombre", mascota.getNombre());
+                Toast.makeText(this, "Iniciando visor de datos.", Toast.LENGTH_LONG).show();
+                startActivity(intentMascota);
 
-            Toast.makeText(this, "Iniciando visor de datos.", Toast.LENGTH_LONG).show();
-            startActivity(intentMascota);
-
-            System.out.println(mascota.toString());
-
+                System.out.println(mascota.toString());
+            } else {
+                Toast.makeText(this, "Codigo inexistente.", Toast.LENGTH_LONG).show();
+            }
         } catch (Exception e) {
             Log.e(MIS_LOGS, "Error buscar mascota " + e.getMessage());
         }finally {

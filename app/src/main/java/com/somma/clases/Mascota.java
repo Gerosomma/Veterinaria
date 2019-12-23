@@ -1,8 +1,9 @@
 package com.somma.clases;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Mascota {
+public class Mascota implements Serializable {
     private static String codigo;
     private static Duenio duenio;
     private static String nombre;
