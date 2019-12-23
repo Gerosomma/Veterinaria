@@ -28,30 +28,35 @@ public class persistenciaMascotas {
         }
 
     public Mascota buscarMascota(String codigo, SQLiteDatabase baseDatos) {
-        Mascota mascota = new Mascota();
+        Mascota mascota = null;
         Duenio duenio = new Duenio();
         Cursor cursor;
         /*cursor = baseDatos.rawQuery(new StringBuilder(
                 "SELECT ").append(BD.Mascotas.COLUMNAS).append(" FROM ").append(BD.MASCOTAS).append(" WHERE codigo=?")
                 .toString(),
                 args);*/
-        String[] args = new String[] {codigo};
-        cursor = baseDatos.query(BD.MASCOTAS, BD.Mascotas.COLUMNAS,
+        try{
+            String[] args = new String[] {codigo};
+            cursor = baseDatos.query(BD.MASCOTAS, BD.Mascotas.COLUMNAS,
                     BD.Mascotas.CODIGO + " = ?",
                     args, null, null, null);
-        if (cursor.moveToFirst()){
-            mascota.setCodigo(cursor.getString(cursor.getColumnIndex(BD.Mascotas.CODIGO)));
-            mascota.setDuenio(duenio);
-            mascota.setNombre(cursor.getString(cursor.getColumnIndex(BD.Mascotas.NOMBRE)));
-            mascota.setFecha_afiliacion(cursor.getString(cursor.getColumnIndex(BD.Mascotas.FECHA_AFILIACION)));
-            mascota.setEspecie(cursor.getString(cursor.getColumnIndex(BD.Mascotas.ESPECIE)));
-            mascota.setRaza(cursor.getString(cursor.getColumnIndex(BD.Mascotas.RAZA)));
-            mascota.setEdad(cursor.getInt(cursor.getColumnIndex(BD.Mascotas.EDAD)));
-            mascota.setPeso(cursor.getInt(cursor.getColumnIndex(BD.Mascotas.PESO)));
-            mascota.setPelo(cursor.getString(cursor.getColumnIndex(BD.Mascotas.PELO)));
-            Log.e(MIS_LOGS, "cedula! ::::::::::::::::::::::::");
-        } else {
-            Log.e(MIS_LOGS, ":::::::::::::::::::     NO SE ENCONTRARON MASCOTAS     :::::::::::::::::::::::: ");
+            if (cursor.moveToFirst()){
+                mascota = new Mascota();
+                mascota.setCodigo(cursor.getString(cursor.getColumnIndex(BD.Mascotas.CODIGO)));
+                mascota.setDuenio(duenio);
+                mascota.setNombre(cursor.getString(cursor.getColumnIndex(BD.Mascotas.NOMBRE)));
+                mascota.setFecha_afiliacion(cursor.getString(cursor.getColumnIndex(BD.Mascotas.FECHA_AFILIACION)));
+                mascota.setEspecie(cursor.getString(cursor.getColumnIndex(BD.Mascotas.ESPECIE)));
+                mascota.setRaza(cursor.getString(cursor.getColumnIndex(BD.Mascotas.RAZA)));
+                mascota.setEdad(cursor.getInt(cursor.getColumnIndex(BD.Mascotas.EDAD)));
+                mascota.setPeso(cursor.getInt(cursor.getColumnIndex(BD.Mascotas.PESO)));
+                mascota.setPelo(cursor.getString(cursor.getColumnIndex(BD.Mascotas.PELO)));
+                Log.e(MIS_LOGS, "cedula! ::::::::::::::::::::::::");
+            } else {
+                Log.e(MIS_LOGS, ":::::::::::::::::::     NO SE ENCONTRARON MASCOTAS     :::::::::::::::::::::::: ");
+            }
+        } catch (Exception e) {
+            Log.e(MIS_LOGS, "::::::::: cayo exception: " + e.getMessage());
         }
         return mascota;
     }
