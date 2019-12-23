@@ -1,21 +1,15 @@
 package com.somma.persistencia;
 
 import android.content.Context;
-import android.content.RestrictionEntry;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 
 import com.somma.clases.Duenio;
 import com.somma.clases.Mascota;
 import com.somma.veterinaria.BD;
 import com.somma.veterinaria.BDHelper;
-
-import java.util.Date;
-import java.util.MissingFormatArgumentException;
 
 public class persistenciaMascotas {
 
@@ -25,7 +19,7 @@ public class persistenciaMascotas {
 
     public persistenciaMascotas(Context context) {
 
-        }
+    }
 
     public Mascota buscarMascota(String codigo, SQLiteDatabase baseDatos) {
         Mascota mascota = null;
@@ -36,8 +30,9 @@ public class persistenciaMascotas {
                 .toString(),
                 args);*/
         try{
+
             String[] args = new String[] {codigo};
-            cursor = baseDatos.query(BD.MASCOTAS, BD.Mascotas.COLUMNAS,
+            cursor = baseDatos.query(  BD.MASCOTAS + " INNER JOIN " + BD.DUENIOS, BD.Mascotas.COLUMNAS,
                     BD.Mascotas.CODIGO + " = ?",
                     args, null, null, null);
             if (cursor.moveToFirst()){

@@ -6,83 +6,291 @@
     android:layout_height="match_parent"
     tools:context=".DatosMascota">
 
-    <EditText
-        android:id="@+id/codigo"
+    <TextView
+        android:id="@+id/nom"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="Codigo:"
-        android:layout_width="250dp"
-        android:textSize="25dp"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="5dp"
+        android:text="Nombre de mascota"
+        android:textSize="25dp" />
 
     <EditText
         android:id="@+id/nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginLeft="152dp"
+        android:layout_marginTop="-6dp"
+        android:layout_toEndOf="@+id/nom"
+        android:inputType="none"
+        android:text="Nombre:"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/cod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nom"
+        android:layout_marginTop="26dp"
+        android:text="Codigo"
+        android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/codigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nombre"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="-1dp"
+        android:layout_toEndOf="@+id/cod"
+        android:inputType="number"
+        android:text="Codigo:"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/afi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cod"
+        android:layout_marginTop="21dp"
+        android:text="Afiliacion"
+        android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/afiliacion"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/codigo"
-        android:layout_centerHorizontal="true"
-        android:text="Nombre:"
-        android:layout_width="250dp"
-        android:textSize="25dp"
-        android:layout_marginTop="16dp" />
-
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@+id/afi"
+        android:inputType="date"
         android:text="Fecha de Afiliacion"
-        android:id="@+id/afiliacion"
-        android:layout_below="@+id/nombre"
-        android:layout_centerHorizontal="true"
-        android:textSize="25dp"
-        android:layout_marginTop="16dp" />
+        android:textSize="16dp" />
 
-    <EditText
-        android:layout_width="250dp"
+    <TextView
+        android:id="@+id/esp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/afi"
+        android:layout_marginTop="25dp"
         android:text="Especie"
+        android:textSize="16dp" />
+
+    <EditText
         android:id="@+id/especie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/afiliacion"
-        android:layout_centerHorizontal="true"
-        android:textSize="25dp"
-        android:layout_marginTop="16dp" />
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@+id/esp"
+        android:inputType="none"
+        android:text="Especie"
+        android:textSize="16dp" />
 
-    <EditText
-        android:layout_width="250dp"
+    <TextView
+        android:id="@+id/raz"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/esp"
+        android:layout_marginTop="14dp"
         android:text="Raza"
+        android:textSize="16dp" />
+
+    <EditText
         android:id="@+id/raza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/especie"
-        android:layout_centerHorizontal="true"
-        android:textSize="25dp"
-        android:layout_marginTop="16dp" />
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@+id/raz"
+        android:text="Raza"
+        android:textSize="16dp" />
 
-    <EditText
-        android:layout_width="250dp"
+    <TextView
+        android:id="@+id/ed"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/raz"
+        android:layout_marginTop="30dp"
         android:text="Edad"
+        android:textSize="16dp" />
+
+    <EditText
         android:id="@+id/edad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/raza"
-        android:layout_centerHorizontal="true"
-        android:textSize="25dp"
-        android:layout_marginTop="16dp" />
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@+id/ed"
+        android:inputType="number"
+        android:text="Edad"
+        android:textSize="16dp" />
 
-    <EditText
-        android:layout_width="250dp"
+    <TextView
+        android:id="@+id/pes"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/ed"
+        android:layout_marginTop="23dp"
         android:text="Peso"
-        android:id="@+id/peso"
-        android:layout_below="@+id/edad"
-        android:layout_centerHorizontal="true"
-        android:textSize="25dp"
-        android:layout_marginTop="16dp" />
+        android:textSize="16dp" />
 
     <EditText
-        android:layout_width="250dp"
+        android:id="@+id/peso"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/edad"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@+id/pes"
+        android:inputType="number"
+        android:text="Peso"
+        android:textSize="16dp" />
+
+
+    <TextView
+        android:id="@+id/pel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pes"
+        android:layout_marginTop="24dp"
         android:text="Pelo"
+        android:textSize="16dp" />
+
+    <EditText
         android:id="@+id/pelo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/peso"
-        android:layout_centerHorizontal="true"
-        android:textSize="25dp"
-        android:layout_marginTop="16dp" />
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@+id/pel"
+        android:inputType="none"
+        android:text="Pelo"
+        android:textSize="16dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
+        android:layout_below="@+id/nombre"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="137dp"
+        android:layout_marginEnd="19dp"
+        tools:srcCompat="@tools:sample/avatars[2]" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="77dp"
+        tools:srcCompat="@tools:sample/avatars[1]" />
+
+    <EditText
+        android:id="@+id/cedula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="false"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="102dp"
+        android:layout_toEndOf="@id/imageView2"
+        android:inputType="number"
+        android:text="Codigo:"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tDuenio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="false"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="113dp"
+        android:layout_toEndOf="@id/imageView2"
+        android:text="Cedula"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/nomb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tDuenio"
+        android:layout_centerHorizontal="false"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="28dp"
+        android:layout_toEndOf="@id/imageView2"
+        android:text="Nombre"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/dir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nomb"
+        android:layout_centerHorizontal="false"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="23dp"
+        android:layout_toEndOf="@id/imageView2"
+        android:text="Direccion"
+        android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/direccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nombreDuenio"
+        android:layout_centerHorizontal="false"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@id/imageView2"
+        android:inputType="none"
+        android:text="Direccion"
+        android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/telefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/direccion"
+        android:layout_centerHorizontal="false"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@id/imageView2"
+        android:text="Telefono"
+        android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/nombreDuenio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cedula"
+        android:layout_centerHorizontal="false"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/imageView2"
+        android:inputType="date"
+        android:text="Nombre"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dir"
+        android:layout_centerHorizontal="false"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="27dp"
+        android:layout_toEndOf="@id/imageView2"
+        android:text="Telefono"
+        android:textSize="16dp" />
+
 </RelativeLayout>
