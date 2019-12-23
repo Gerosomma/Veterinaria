@@ -190,22 +190,9 @@
         android:layout_height="180dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="7dp"
-        android:layout_marginBottom="77dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginBottom="138dp"
         tools:srcCompat="@tools:sample/avatars[1]" />
-
-    <EditText
-        android:id="@+id/cedula"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="false"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="102dp"
-        android:layout_toEndOf="@id/imageView2"
-        android:inputType="number"
-        android:text="Codigo:"
-        android:textSize="16dp" />
 
     <TextView
         android:id="@+id/tDuenio"
@@ -214,7 +201,7 @@
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="false"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="113dp"
+        android:layout_marginTop="52dp"
         android:layout_toEndOf="@id/imageView2"
         android:text="Cedula"
         android:textSize="16dp" />
@@ -292,5 +279,42 @@
         android:layout_toEndOf="@id/imageView2"
         android:text="Telefono"
         android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/cedula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="false"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="41dp"
+        android:layout_toEndOf="@id/imageView2"
+        android:inputType="number"
+        android:text="Codigo:"
+        android:textSize="16dp" />
+
+    <LinearLayout
+        android:id="@+id/llBotones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnRegistroVacuna"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registro de Vacuna"
+            android:onClick="btnRegistroVacuna" />
+
+        <Button
+            android:id="@+id/btnHistoriaClinica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Historia Clinica"
+            android:onClick="btnHistoriaClinica" />
+    </LinearLayout>
 
 </RelativeLayout>
