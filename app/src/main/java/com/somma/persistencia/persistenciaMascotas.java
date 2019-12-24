@@ -29,6 +29,11 @@ public class persistenciaMascotas {
                 "SELECT ").append(BD.Mascotas.COLUMNAS).append(" FROM ").append(BD.MASCOTAS).append(" WHERE codigo=?")
                 .toString(),
                 args);*/
+
+        /*cursor = baseDatos.query( BD.MASCOTAS + ", " + BD.DUENIOS,
+                BD.Mascotas.COLUMNAS,
+                BD.MASCOTAS + "." + BD.Mascotas.CODIGO + " = ?",
+                args, null, null, null);*/
         try{
 
             String[] args = new String[] {codigo};
@@ -47,10 +52,6 @@ public class persistenciaMascotas {
                             args, null, null, null);
 
 
-            /*cursor = baseDatos.query( BD.MASCOTAS + ", " + BD.DUENIOS,
-                    BD.Mascotas.COLUMNAS,
-                    BD.MASCOTAS + "." + BD.Mascotas.CODIGO + " = ?",
-                    args, null, null, null);*/
             if (cursor.moveToFirst()){
                 mascota = new Mascota();
                 Log.i(MIS_LOGS, cursor.getColumnNames().toString());

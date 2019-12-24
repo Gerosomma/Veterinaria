@@ -9,16 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HistoriaClinica"
-            android:parentActivityName=".DatosMascota">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".DatosMascota" />
-        </activity>
-        <activity android:name=".RegistroVacunas"
-            android:parentActivityName=".DatosMascota">
-        <meta-data android:name="android.support.PARENT_ACTIVITY"
-            android:value=".DatosMascota" />
-        </activity>
+        <activity android:name=".HistoriaClinica" />
+        <activity android:name=".RegistroVacunas" />
         <activity
             android:name=".DatosMascota"
             android:parentActivityName=".MainActivity">
