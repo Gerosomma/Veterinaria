@@ -9,7 +9,7 @@ import android.util.Log;
 public class BDHelper extends SQLiteOpenHelper {
     private Context context;
 
-    public  static final String MIS_LOGS = "Mis_LOGS";
+    public  static final String MIS_LOGS = "MIS_LOGS";
     public BDHelper(Context contexto) {
         super(contexto, BD.NOMBRE_BASE_DATOS, null, BD.VERSION);
 
@@ -28,9 +28,9 @@ public class BDHelper extends SQLiteOpenHelper {
             Log.e(MIS_LOGS, "TERMINO DE CREAR LAS TABLAS");
             //Cargamos mascotas en la tabla
             db.execSQL(new StringBuilder("INSERT INTO ").append(BD.DUENIOS)
-                    .append(" VALUES (NULL, 46453213, 'Geronimo Somma', 'Salterain 1421', '091654252');").toString());
+                    .append(" VALUES (NULL, 46453213, 'Geronimo Somma', 'Salterain 1421', 091654252);").toString());
             db.execSQL(new StringBuilder("INSERT INTO ").append(BD.DUENIOS)
-                    .append(" VALUES (NULL, 46615780, 'Valentina Lacoste', 'salto 1556', '0916-----');").toString());
+                    .append(" VALUES (NULL, 46615780, 'Valentina Lacoste', 'salto 1556', 0916);").toString());
             db.execSQL(new StringBuilder("INSERT INTO ").append(BD.MASCOTAS)
                     .append(" VALUES (NULL, '121', 46453213, 'Zaturnino', '12022010'," +
                             " 'Perro', 'Labrador', 9, 45, 'Blanco');").toString());
@@ -41,10 +41,10 @@ public class BDHelper extends SQLiteOpenHelper {
                     .append(" VALUES (NULL, '123', 46615780, 'Asia', '12022016'," +
                             " 'Gato', 'linda', 3, 2, 'Negro atrigrado');").toString());
 
-            Log.e(MIS_LOGS, "AGREGO ÑPS DUENIOS Y MASOCTAS");
+            Log.i(MIS_LOGS, "AGREGO ÑPS DUENIOS Y MASOCTAS");
 
         } catch (SQLException e) {
-            Log.e(MIS_LOGS, "Error al onCreate dbHelper " + e.getMessage());
+            Log.i(MIS_LOGS, "Error al onCreate dbHelper " + e.getMessage());
         }
 
     }
@@ -58,6 +58,7 @@ public class BDHelper extends SQLiteOpenHelper {
         db.execSQL(BD.Historia_clinica.SQL_ELIMINAR_TABLA);
         db.execSQL(BD.Vacunas.SQL_ELIMINAR_TABLA);
 
+        Log.i(MIS_LOGS, "paso por aca ");
         onCreate(db);
     }
 

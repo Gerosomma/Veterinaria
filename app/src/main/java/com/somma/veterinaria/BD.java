@@ -2,6 +2,8 @@ package com.somma.veterinaria;
 
 import android.provider.BaseColumns;
 
+import com.somma.clases.Duenio;
+
 public final class BD {
     //base
     public static final String NOMBRE_BASE_DATOS = "BaseVeterinaria.sqlite3";

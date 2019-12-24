@@ -21,7 +21,10 @@ public class DatosMascota extends AppCompatActivity {
     protected TextView tvEdad;
     protected TextView tvPeso;
     protected TextView tvPelo;
-
+    protected TextView tvCedula;
+    protected TextView tvNombreDuenio;
+    protected TextView tvDireccion;
+    protected TextView tvTelefono;
 
     Mascota mascota= new Mascota();
 
@@ -38,6 +41,10 @@ public class DatosMascota extends AppCompatActivity {
         tvEdad = (TextView)findViewById(R.id.edad);
         tvPeso = (TextView)findViewById(R.id.peso);
         tvPelo = (TextView)findViewById(R.id.pelo);
+        tvCedula = (TextView)findViewById(R.id.cedula);
+        tvNombreDuenio = (TextView)findViewById(R.id.nombreDuenio);
+        tvDireccion = (TextView)findViewById(R.id.direccion);
+        tvTelefono = (TextView)findViewById(R.id.telefono);
 
         Bundle objetoRecibido = i.getExtras();
 
@@ -51,6 +58,11 @@ public class DatosMascota extends AppCompatActivity {
             tvEdad.setText(mascota.getEdad().toString());
             tvPeso.setText(mascota.getPeso().toString());
             tvPelo.setText(mascota.getPelo());
+            tvCedula.setText(mascota.getDuenio().getCedula().toString());
+            tvNombreDuenio.setText(mascota.getDuenio().getNombre());
+            tvDireccion.setText(mascota.getDuenio().getDireccion());
+            tvTelefono.setText(mascota.getDuenio().getTelefono().toString());
+
         } else {
             Toast.makeText(this, "No existe mascota", Toast.LENGTH_LONG).show();
         }
