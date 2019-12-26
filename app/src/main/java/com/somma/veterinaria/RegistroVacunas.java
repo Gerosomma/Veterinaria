@@ -44,7 +44,7 @@ public class RegistroVacunas extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         onBackPressed();
         Intent intentMascota = new Intent(this, DatosMascota.class);
-        Log.i(MIS_LOGS, "Äca pasando por onSupportNavigateUp");
+        Log.i(MIS_LOGS, "Aca pasando por onSupportNavigateUp");
         Bundle bundle= new Bundle();
         bundle.putSerializable("mascota", mascota);
         intentMascota.putExtras(bundle);
@@ -63,5 +63,9 @@ public class RegistroVacunas extends AppCompatActivity {
 
         setResult(RESULT_OK, intentMascota);
         finish();
+    }
+
+    public void btnRegistrarVacuna(View view) {
+
     }
 }
