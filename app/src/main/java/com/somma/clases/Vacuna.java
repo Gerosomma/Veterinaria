@@ -7,7 +7,7 @@ public class Vacuna {
     private static Date fecha;
     private static String vacuna;
     private static String dosis;
-
+    private static H_Clinica h_clinica;
 
     public Vacuna() {
     }
@@ -42,5 +42,13 @@ public class Vacuna {
 
     public static void setDosis(String dosis) {
         Vacuna.dosis = dosis;
+    }
+
+    public static H_Clinica getH_clinica() {
+        return h_clinica;
+    }
+
+    public static void setH_clinica(H_Clinica h_clinica) {
+        Vacuna.h_clinica = h_clinica;
     }
 }

@@ -13,44 +13,138 @@
         android:layout_centerVertical="true"
         android:orientation="vertical"
         android:gravity="center">
-    <TextView
-        android:id="@+id/tvVacuna"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:labelFor="@id/etVacuna"
-        android:text="@string/vacuna"
-        android:textSize="16sp" />
+        <TextView
+            android:id="@+id/tvVacuna"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:labelFor="@id/etVacuna"
+            android:text="@string/vacuna"
+            android:textSize="16sp" />
 
-    <EditText
-        android:id="@+id/etVacuna"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:textAlignment="center"
-        android:labelFor="@id/tvVacuna"
-        android:textSize="16sp"
-        android:importantForAutofill="no" />
+        <EditText
+            android:id="@+id/etVacuna"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:labelFor="@id/tvVacuna"
+            android:textSize="16sp"
+            android:importantForAutofill="no" />
 
-    <TextView
-        android:id="@+id/tvDosis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:labelFor="@id/etDosis"
-        android:text="@string/dosis"
-        android:textSize="16sp" />
+        <TextView
+            android:id="@+id/tvDosis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:labelFor="@id/etDosis"
+            android:text="@string/dosis"
+            android:textSize="16sp" />
 
-    <EditText
-        android:id="@+id/etDosis"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:inputType="number"
-        android:labelFor="@id/tvDosis"
-        android:textSize="16sp"
-        android:importantForAutofill="no" />
+        <EditText
+            android:id="@+id/etDosis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:labelFor="@id/tvDosis"
+            android:textSize="16sp"
+            android:importantForAutofill="no" />
 
+        <TextView
+            android:id="@+id/tvDescripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:labelFor="@id/etDescripcion"
+            android:text="@string/descripcion"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:inputType="text"
+            android:labelFor="@id/tvDescripcion"
+            android:textSize="16sp"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/tvSintomas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:labelFor="@id/etSintomas"
+            android:text="@string/sintomas"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etSintomas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:inputType="text"
+            android:labelFor="@id/tvSintomas"
+            android:textSize="16sp"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/tvTmtoRecomendado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:labelFor="@id/etTmtoRecomendado"
+            android:text="@string/tratamientoRecomendado"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etTmtoRecomendado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:inputType="text"
+            android:labelFor="@id/tvTmtoRecomendado"
+            android:textSize="16sp"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/tvMedRecetado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:labelFor="@id/etMedRecetado"
+            android:text="@string/medicamentoRecetado"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etMedRecetado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:inputType="text"
+            android:labelFor="@id/tvMedRecetado"
+            android:textSize="16sp"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/tvVeterinario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:labelFor="@id/etVeterinario"
+            android:text="@string/veterinario"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etVeterinario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:inputType="text"
+            android:labelFor="@id/tvVeterinario"
+            android:textSize="16sp"
+            android:importantForAutofill="no" />
     </LinearLayout>
 
     <LinearLayout

@@ -88,7 +88,6 @@ public class DatosMascota extends AppCompatActivity {
             bundle.putSerializable("mascota", mascota);
             intentMascota.putExtras(bundle);
 
-            Toast.makeText(this, "Iniciando Historia Clinica.", Toast.LENGTH_LONG).show();
             startActivity(intentMascota);
         }else {
             Toast.makeText(this, "No existe mascota.", Toast.LENGTH_LONG).show();
@@ -103,7 +102,6 @@ public class DatosMascota extends AppCompatActivity {
             bundle.putSerializable("mascota", mascota);
             intentMascota.putExtras(bundle);
 
-            Toast.makeText(this, "Iniciando Registro de Vacunas.", Toast.LENGTH_LONG).show();
             startActivityForResult(intentMascota, Constantes.CODIGO_REGISTRO_VACUNA);
         }else {
             Toast.makeText(this, "No existe mascota.", Toast.LENGTH_LONG).show();

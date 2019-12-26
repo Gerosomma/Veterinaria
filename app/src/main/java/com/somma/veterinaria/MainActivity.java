@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
     private BDHelper bdHelper;
     private SQLiteDatabase baseDatos;
-    private SimpleCursorAdapter adaptador;
     private persistenciaMascotas perMascotas;
 
     protected EditText etCodigo;
@@ -62,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             Log.e(MIS_LOGS, "Error buscar mascota " + e.getMessage());
         }finally {
-
+            baseDatos.close();
         }
     }
 

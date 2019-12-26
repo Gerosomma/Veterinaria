@@ -3,16 +3,34 @@ package com.somma.veterinaria;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 
+import com.somma.clases.H_Clinica;
 import com.somma.clases.Mascota;
+import com.somma.clases.Vacuna;
+import com.somma.persistencia.persistenciaMascotas;
+
+import java.util.Date;
 
 public class RegistroVacunas extends AppCompatActivity {
 
     Mascota mascota= new Mascota();
     Intent i = null;
+    protected EditText etDosis;
+    protected EditText etVacuna;
+    protected EditText etDescripcion;
+    protected EditText etTrmtRecomendado;
+    protected EditText etMedRecetado;
+    protected EditText etSintomas;
+    protected EditText etVeterinario;
+
+    private BDHelper bdHelper;
+    private SQLiteDatabase baseDatos;
+    private persistenciaMascotas perMascotas;
 
     public static final String MIS_LOGS = "MIS_LOGS";
 
@@ -23,12 +41,26 @@ public class RegistroVacunas extends AppCompatActivity {
         setContentView(R.layout.activity_registro_vacunas);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        etDosis = (EditText)findViewById(R.id.etDosis);
+        etVacuna = (EditText)findViewById(R.id.etVacuna);
+        etDescripcion = (EditText)findViewById(R.id.etDescripcion);
+        etSintomas = (EditText)findViewById(R.id.etSintomas);
+        etTrmtRecomendado = (EditText)findViewById(R.id.etTmtoRecomendado);
+        etMedRecetado = (EditText)findViewById(R.id.etMedRecetado);
+        etVeterinario = (EditText)findViewById(R.id.etVeterinario);
+
         i = getIntent();
         Bundle objetoRecibido = i.getExtras();
 
         mascota = (Mascota) objetoRecibido.getSerializable("mascota");
         if (mascota !=null) {
 
+            try {
+                bdHelper = new BDHelper(this);
+                baseDatos = bdHelper.getWritableDatabase();
+            } catch (Exception e) {
+                Log.e(MIS_LOGS, "Error al instancear dbHelper" + e.getMessage());
+            }
             /*Intent intentMascota = new Intent(this, DatosMascota.class);
 
             Bundle bundle= new Bundle();
@@ -66,6 +98,31 @@ public class RegistroVacunas extends AppCompatActivity {
     }
 
     public void btnRegistrarVacuna(View view) {
+        try {
+            perMascotas = new persistenciaMascotas(this);
 
+            Vacuna vacuna = new Vacuna();
+            vacuna.setMascota(mascota);
+            vacuna.setFecha(new Date());
+            vacuna.setDosis(etDosis.getText().toString());
+            vacuna.setVacuna(etVacuna.getText().toString());
+
+            H_Clinica h_clinica = new H_Clinica();
+            h_clinica.setDescripcion(etDescripcion.getText().toString());
+            h_clinica.setTratamiento_recomendado(etTrmtRecomendado.getText().toString());
+            h_clinica.setMedicamento_recetado(etMedRecetado.getText().toString());
+            h_clinica.setSintomas(etSintomas.getText().toString());
+            h_clinica.setVeterinario(etVeterinario.getText().toString());
+            vacuna.setH_clinica(h_clinica);
+
+            perMascotas.agregarRegistroVacuna(vacuna, baseDatos);
+
+            setResult(RESULT_OK);
+            finish();
+        } catch (Exception e) {
+            Log.e(MIS_LOGS, "Error buscar mascota " + e.getMessage());
+        }finally {
+            baseDatos.close();
+        }
     }
 }

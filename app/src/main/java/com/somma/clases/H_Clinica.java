@@ -3,7 +3,6 @@ package com.somma.clases;
 import java.util.Date;
 
 public class H_Clinica {
-    private static Mascota mascota;
     private static Date fecha;
     private static String descripcion;
     private static String sintomas;
@@ -12,14 +11,6 @@ public class H_Clinica {
     private static String veterinario;
 
     public H_Clinica() {
-    }
-
-    public static Mascota getMascota() {
-        return mascota;
-    }
-
-    public static void setMascota(Mascota mascota) {
-        H_Clinica.mascota = mascota;
     }
 
     public static Date getFecha() {

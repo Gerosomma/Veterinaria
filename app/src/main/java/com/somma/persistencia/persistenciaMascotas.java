@@ -1,5 +1,6 @@
 package com.somma.persistencia;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -8,8 +9,12 @@ import android.util.Log;
 
 import com.somma.clases.Duenio;
 import com.somma.clases.Mascota;
+import com.somma.clases.Vacuna;
 import com.somma.veterinaria.BD;
 import com.somma.veterinaria.BDHelper;
+
+import java.util.Calendar;
+import java.util.Date;
 
 public class persistenciaMascotas {
 
@@ -25,15 +30,7 @@ public class persistenciaMascotas {
         Mascota mascota = null;
         Duenio duenio = new Duenio();
         Cursor cursor;
-        /*cursor = baseDatos.rawQuery(new StringBuilder(
-                "SELECT ").append(BD.Mascotas.COLUMNAS).append(" FROM ").append(BD.MASCOTAS).append(" WHERE codigo=?")
-                .toString(),
-                args);*/
 
-        /*cursor = baseDatos.query( BD.MASCOTAS + ", " + BD.DUENIOS,
-                BD.Mascotas.COLUMNAS,
-                BD.MASCOTAS + "." + BD.Mascotas.CODIGO + " = ?",
-                args, null, null, null);*/
         try{
 
             String[] args = new String[] {codigo};
@@ -76,5 +73,40 @@ public class persistenciaMascotas {
             Log.e(MIS_LOGS, "::::::::: cayo exception: " + e.getMessage());
         }
         return mascota;
+    }
+
+    public void agregarRegistroVacuna(Vacuna vacuna, SQLiteDatabase baseDatos) {
+        ContentValues valores = new ContentValues();
+
+        //ejemplo de trabajo sobre transacciones.
+        baseDatos.beginTransaction();
+
+        try {
+            // insertar artistas....
+            valores.put(BD.Vacunas.CODIGO, vacuna.getMascota().getCodigo());
+            valores.put(BD.Vacunas.FECHA, vacuna.getFecha().toString());
+            valores.put(BD.Vacunas.VACUNA, vacuna.getVacuna());
+            valores.put(BD.Vacunas.DOSIS, vacuna.getDosis());
+            baseDatos.insert(BD.VACUNAS, null, valores);
+
+            valores = new ContentValues();
+            Log.e(MIS_LOGS, "Se registro una vacuna!");
+
+            valores.put(BD.Historia_clinica.CODIGO, vacuna.getMascota().getCodigo());
+            valores.put(BD.Historia_clinica.FECHA, vacuna.getFecha().toString());
+            valores.put(BD.Historia_clinica.DESCRIPCION, vacuna.getH_clinica().getDescripcion());
+            valores.put(BD.Historia_clinica.SINTOMAS, vacuna.getH_clinica().getSintomas());
+            valores.put(BD.Historia_clinica.TRATAMIENTO_RECOMENDADO, vacuna.getH_clinica().getTratamiento_recomendado());
+            valores.put(BD.Historia_clinica.MEDICAMENTO_RECETADO, vacuna.getH_clinica().getMedicamento_recetado());
+            valores.put(BD.Historia_clinica.VETERINARIO, vacuna.getH_clinica().getVeterinario());
+            baseDatos.insert(BD.H_CLINICA, null, valores);
+            Log.e(MIS_LOGS, "Se registro Historia clinica!");
+
+            baseDatos.setTransactionSuccessful();
+        } catch (Exception e) {
+            Log.e(MIS_LOGS, "No se pudo insertar vacuna." + e.getMessage());
+        } finally {
+            baseDatos.endTransaction();
+        }
     }
 }

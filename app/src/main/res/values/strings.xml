@@ -22,4 +22,9 @@
     <string name="datos_due_o">Datos Dueño</string>
     <string name="registro_de_vacuna">Registro de Vacuna</string>
     <string name="historia_clinica">Historia Clinica</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="tratamientoRecomendado">Tratamiento recomendado</string>
+    <string name="medicamentoRecetado">Medicamento recetado</string>
+    <string name="veterinario">Veterinario</string>
+    <string name="sintomas">Sintomas</string>
 </resources>
