@@ -4,4 +4,22 @@
     <string name="vacuna">Vacuna</string>
     <string name="dosis">Dosis</string>
     <string name="registrarVacuna">Registrar Vacuna</string>
+    <string name="nombre_de_mascota">Nombre de mascota: </string>
+    <string name="datos_mascota">Datos Mascota</string>
+    <string name="codigo">Codigo:</string>
+    <string name="afiliacion">Afiliacion:</string>
+    <string name="especie">Especie:</string>
+    <string name="raza">Raza:</string>
+    <string name="edad">Edad:</string>
+    <string name="peso">Peso:</string>
+    <string name="pelo">Pelo:</string>
+    <string name="cedula">Cedula:</string>
+    <string name="nombre">Nombre:</string>
+    <string name="direccion">Direccion:</string>
+    <string name="telefono">Telefono:</string>
+    <string name="foto_due_o">foto dueño</string>
+    <string name="foto_mascota">Foto mascota</string>
+    <string name="datos_due_o">Datos Dueño</string>
+    <string name="registro_de_vacuna">Registro de Vacuna</string>
+    <string name="historia_clinica">Historia Clinica</string>
 </resources>

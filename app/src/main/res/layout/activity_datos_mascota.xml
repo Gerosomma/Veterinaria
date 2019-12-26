@@ -4,317 +4,202 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:isScrollContainer="true"
     tools:context=".DatosMascota">
 
-    <TextView
-        android:id="@+id/nom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Nombre de mascota"
-        android:textSize="25dp" />
 
-    <EditText
+    <TextView
         android:id="@+id/nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginLeft="152dp"
-        android:layout_marginTop="-6dp"
-        android:layout_toEndOf="@+id/nom"
-        android:inputType="none"
-        android:text="Nombre:"
-        android:textSize="25dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="@string/nombre_de_mascota"
+        android:textSize="25sp" />
 
-    <TextView
-        android:id="@+id/cod"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/nom"
-        android:layout_marginTop="26dp"
-        android:text="Codigo"
-        android:textSize="16dp" />
-
-    <EditText
-        android:id="@+id/codigo"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/llDatos"
+        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/nombre"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="-1dp"
-        android:layout_toEndOf="@+id/cod"
-        android:inputType="number"
-        android:text="Codigo:"
-        android:textSize="16dp" />
+        android:layout_marginBottom="8dp"
+        android:gravity="start"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/afi"
-        android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/llMascota"
+            style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/mascota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/datos_mascota"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/codigo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/codigo"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/afiliacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/afiliacion"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/especie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/especie"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/raza"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/raza"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/edad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/edad"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/peso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/peso"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/pelo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pelo"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/llDuenio"
+            style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/duenio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="@string/datos_due_o"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/cedula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="@string/cedula"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/nombreDuenio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="@string/nombre"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/direccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="@string/direccion"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/telefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="@string/telefono"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llFotos"
+        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/cod"
-        android:layout_marginTop="21dp"
-        android:text="Afiliacion"
-        android:textSize="16dp" />
-
-    <EditText
-        android:id="@+id/afiliacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/codigo"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="2dp"
-        android:layout_toEndOf="@+id/afi"
-        android:inputType="date"
-        android:text="Fecha de Afiliacion"
-        android:textSize="16dp" />
-
-    <TextView
-        android:id="@+id/esp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/afi"
-        android:layout_marginTop="25dp"
-        android:text="Especie"
-        android:textSize="16dp" />
-
-    <EditText
-        android:id="@+id/especie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/afiliacion"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="2dp"
-        android:layout_toEndOf="@+id/esp"
-        android:inputType="none"
-        android:text="Especie"
-        android:textSize="16dp" />
-
-    <TextView
-        android:id="@+id/raz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/esp"
-        android:layout_marginTop="14dp"
-        android:text="Raza"
-        android:textSize="16dp" />
-
-    <EditText
-        android:id="@+id/raza"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/especie"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="3dp"
-        android:layout_toEndOf="@+id/raz"
-        android:text="Raza"
-        android:textSize="16dp" />
-
-    <TextView
-        android:id="@+id/ed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/raz"
-        android:layout_marginTop="30dp"
-        android:text="Edad"
-        android:textSize="16dp" />
-
-    <EditText
-        android:id="@+id/edad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/raza"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="2dp"
-        android:layout_toEndOf="@+id/ed"
-        android:inputType="number"
-        android:text="Edad"
-        android:textSize="16dp" />
-
-    <TextView
-        android:id="@+id/pes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ed"
-        android:layout_marginTop="23dp"
-        android:text="Peso"
-        android:textSize="16dp" />
-
-    <EditText
-        android:id="@+id/peso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edad"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="3dp"
-        android:layout_toEndOf="@+id/pes"
-        android:inputType="number"
-        android:text="Peso"
-        android:textSize="16dp" />
-
-
-    <TextView
-        android:id="@+id/pel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/pes"
-        android:layout_marginTop="24dp"
-        android:text="Pelo"
-        android:textSize="16dp" />
-
-    <EditText
-        android:id="@+id/pelo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/peso"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="2dp"
-        android:layout_toEndOf="@+id/pel"
-        android:inputType="none"
-        android:text="Pelo"
-        android:textSize="16dp" />
-
+        android:layout_above="@+id/llBotones"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="horizontal">
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="180dp"
-        android:layout_below="@+id/nombre"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="137dp"
-        android:layout_marginEnd="19dp"
-        tools:srcCompat="@tools:sample/avatars[2]" />
-
-    <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imgMascota"
         android:layout_width="200dp"
         android:layout_height="180dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginBottom="138dp"
+        android:layout_below="@+id/llDatos"
+        android:layout_marginStart="10dp"
+        android:contentDescription="@string/foto_due_o"
         tools:srcCompat="@tools:sample/avatars[1]" />
 
-    <TextView
-        android:id="@+id/tDuenio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="false"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="52dp"
-        android:layout_toEndOf="@id/imageView2"
-        android:text="Cedula"
-        android:textSize="16dp" />
-
-    <TextView
-        android:id="@+id/nomb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tDuenio"
-        android:layout_centerHorizontal="false"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="28dp"
-        android:layout_toEndOf="@id/imageView2"
-        android:text="Nombre"
-        android:textSize="16dp" />
-
-    <TextView
-        android:id="@+id/dir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/nomb"
-        android:layout_centerHorizontal="false"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="23dp"
-        android:layout_toEndOf="@id/imageView2"
-        android:text="Direccion"
-        android:textSize="16dp" />
-
-    <EditText
-        android:id="@+id/direccion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/nombreDuenio"
-        android:layout_centerHorizontal="false"
-        android:layout_marginStart="83dp"
-        android:layout_marginTop="4dp"
-        android:layout_toEndOf="@id/imageView2"
-        android:inputType="none"
-        android:text="Direccion"
-        android:textSize="16dp" />
-
-    <EditText
-        android:id="@+id/telefono"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/direccion"
-        android:layout_centerHorizontal="false"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="3dp"
-        android:layout_toEndOf="@id/imageView2"
-        android:text="Telefono"
-        android:textSize="16dp" />
-
-    <EditText
-        android:id="@+id/nombreDuenio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cedula"
-        android:layout_centerHorizontal="false"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="5dp"
-        android:layout_toEndOf="@id/imageView2"
-        android:inputType="date"
-        android:text="Nombre"
-        android:textSize="16dp" />
-
-    <TextView
-        android:id="@+id/tel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/dir"
-        android:layout_centerHorizontal="false"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="27dp"
-        android:layout_toEndOf="@id/imageView2"
-        android:text="Telefono"
-        android:textSize="16dp" />
-
-    <EditText
-        android:id="@+id/cedula"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="false"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="41dp"
-        android:layout_toEndOf="@id/imageView2"
-        android:inputType="number"
-        android:text="Codigo:"
-        android:textSize="16dp" />
+    <ImageView
+        android:id="@+id/imgDuenio"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
+        android:layout_below="@+id/llDatos"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/imgMascota"
+        android:layout_marginEnd="10dp"
+        android:contentDescription="@string/foto_mascota"
+        tools:srcCompat="@tools:sample/avatars[2]" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/llBotones"
+        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="8dp"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnRegistroVacuna"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Registro de Vacuna"
-            android:onClick="btnRegistroVacuna" />
+            android:layout_height="match_parent"
+            android:onClick="btnRegistroVacuna"
+            android:text="@string/registro_de_vacuna" />
 
         <Button
             android:id="@+id/btnHistoriaClinica"
+            style="?android:attr/buttonBarStyle"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Historia Clinica"
-            android:onClick="btnHistoriaClinica" />
+            android:layout_height="match_parent"
+            android:onClick="btnHistoriaClinica"
+            android:text="@string/historia_clinica" />
     </LinearLayout>
 
 </RelativeLayout>

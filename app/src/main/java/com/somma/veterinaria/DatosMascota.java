@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +30,8 @@ public class DatosMascota extends AppCompatActivity {
     protected TextView tvNombreDuenio;
     protected TextView tvDireccion;
     protected TextView tvTelefono;
+    protected ImageView imgMascota;
+    protected ImageView imgDuenio;
 
     Mascota mascota= new Mascota();
 
@@ -49,24 +52,28 @@ public class DatosMascota extends AppCompatActivity {
         tvNombreDuenio = (TextView)findViewById(R.id.nombreDuenio);
         tvDireccion = (TextView)findViewById(R.id.direccion);
         tvTelefono = (TextView)findViewById(R.id.telefono);
+        imgDuenio = (ImageView)findViewById(R.id.imgDuenio);
+        imgMascota = (ImageView)findViewById(R.id.imgMascota);
+
         if (i.hasExtra("mascota")){
-            Bundle objetoRecibido = i.getExtras();
+            Bundle objetoRecibido = i.getExtras(); 
 
             mascota = (Mascota) objetoRecibido.getSerializable("mascota");
             if (mascota !=null) {
-                tvCodigo.setText(mascota.getCodigo());
-                tvNombre.setText(mascota.getNombre());
-                tvAfiliacion.setText(mascota.getFecha_afiliacion());
-                tvEspecie.setText(mascota.getEspecie());
-                tvRaza.setText(mascota.getRaza());
-                tvEdad.setText(mascota.getEdad().toString());
-                tvPeso.setText(mascota.getPeso().toString());
-                tvPelo.setText(mascota.getPelo());
-                tvCedula.setText(mascota.getDuenio().getCedula().toString());
-                tvNombreDuenio.setText(mascota.getDuenio().getNombre());
-                tvDireccion.setText(mascota.getDuenio().getDireccion());
-                tvTelefono.setText(mascota.getDuenio().getTelefono().toString());
-
+                tvCodigo.setText(tvCodigo.getText() +  mascota.getCodigo());
+                tvNombre.setText(tvNombre.getText() + mascota.getNombre());
+                tvAfiliacion.setText(tvAfiliacion.getText() + mascota.getFecha_afiliacion());
+                tvEspecie.setText(tvEspecie.getText() + mascota.getEspecie());
+                tvRaza.setText(tvRaza.getText() + mascota.getRaza());
+                tvEdad.setText(tvEdad.getText() + mascota.getEdad().toString());
+                tvPeso.setText(tvPeso.getText() + mascota.getPeso().toString());
+                tvPelo.setText(tvPelo.getText() + mascota.getPelo());
+                tvCedula.setText(tvCedula.getText() + mascota.getDuenio().getCedula().toString());
+                tvNombreDuenio.setText(tvNombreDuenio.getText() + mascota.getDuenio().getNombre());
+                tvDireccion.setText(tvDireccion.getText() + mascota.getDuenio().getDireccion());
+                tvTelefono.setText(tvTelefono.getText() + mascota.getDuenio().getTelefono().toString());
+                imgMascota.setImageDrawable(getResources().getDrawable(R.drawable.cerebro));
+                imgDuenio.setImageDrawable(getResources().getDrawable(R.drawable.bugs_bunny));
             } else {
                 Toast.makeText(this, "No existe mascota", Toast.LENGTH_LONG).show();
             }
