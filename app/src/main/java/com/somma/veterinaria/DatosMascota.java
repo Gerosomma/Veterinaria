@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -18,6 +19,7 @@ import com.somma.clases.Mascota;
 import java.text.DecimalFormat;
 
 public class DatosMascota extends AppCompatActivity {
+    public  static final String MIS_LOGS = "MIS_LOGS";
     protected TextView tvCodigo;
     protected TextView tvNombre;
     protected TextView tvAfiliacion;
@@ -88,7 +90,7 @@ public class DatosMascota extends AppCompatActivity {
             bundle.putSerializable("mascota", mascota);
             intentMascota.putExtras(bundle);
 
-            startActivity(intentMascota);
+            startActivityForResult(intentMascota,Constantes.CODIGO_HISTORIA_CLINICA);
         }else {
             Toast.makeText(this, "No existe mascota.", Toast.LENGTH_LONG).show();
         }
@@ -115,11 +117,23 @@ public class DatosMascota extends AppCompatActivity {
         switch (requestCode) {
             case Constantes.CODIGO_REGISTRO_VACUNA:
                 if (resultCode == RESULT_OK) {
-                    //double total = data.getDoubleExtra(Constantes.EXTRA_TOTAL, 0);
-                    Toast.makeText(this, "RECIBIMOS EL INTENT DESDE REGISTRO VACUNAS.", Toast.LENGTH_LONG).show();
+
                 }
 
                 break;
+            case Constantes.CODIGO_HISTORIA_CLINICA:
+                if (resultCode == RESULT_OK) {
+
+                }
+                break;
         }
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e(MIS_LOGS, "Destroy MainActivity ");
+        //cuidado con esto, es para las pruebas de clases
+        //cuando temrino de usar la app se elimine la base de datos para que a la proxima vez vuelva a crear toda la base.
+        //bdHelper.eliminarBaseDatos();
     }
 }

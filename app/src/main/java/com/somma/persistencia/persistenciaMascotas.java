@@ -82,7 +82,6 @@ public class persistenciaMascotas {
         baseDatos.beginTransaction();
 
         try {
-            // insertar artistas....
             valores.put(BD.Vacunas.CODIGO, vacuna.getMascota().getCodigo());
             valores.put(BD.Vacunas.FECHA, vacuna.getFecha().toString());
             valores.put(BD.Vacunas.VACUNA, vacuna.getVacuna());
@@ -108,5 +107,13 @@ public class persistenciaMascotas {
         } finally {
             baseDatos.endTransaction();
         }
+    }
+
+    public Cursor ListadoHistoriaClinica(Mascota mascota, SQLiteDatabase baseDatos){
+        //                     nombre base | quecolumnas obtengo | clausula "where"
+        String[] args = new String[] {mascota.getCodigo()};
+        return baseDatos.query(BD.H_CLINICA, BD.Historia_clinica.COLUMNAS, BD.Historia_clinica.CODIGO + " = ?",
+                args, null, null,
+                BD.Historia_clinica.FECHA + " DESC");
     }
 }

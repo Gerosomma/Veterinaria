@@ -81,6 +81,7 @@ public class RegistroVacunas extends AppCompatActivity {
         bundle.putSerializable("mascota", mascota);
         intentMascota.putExtras(bundle);
 
+        baseDatos.close();
         setResult(RESULT_OK, intentMascota);
         finish();
         return false;
@@ -93,6 +94,7 @@ public class RegistroVacunas extends AppCompatActivity {
         bundle.putSerializable("mascota", mascota);
         intentMascota.putExtras(bundle);
 
+        baseDatos.close();
         setResult(RESULT_OK, intentMascota);
         finish();
     }
@@ -116,13 +118,19 @@ public class RegistroVacunas extends AppCompatActivity {
             vacuna.setH_clinica(h_clinica);
 
             perMascotas.agregarRegistroVacuna(vacuna, baseDatos);
-
-            setResult(RESULT_OK);
-            finish();
         } catch (Exception e) {
             Log.e(MIS_LOGS, "Error buscar mascota " + e.getMessage());
         }finally {
             baseDatos.close();
+            setResult(RESULT_OK);
+            finish();
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        baseDatos.close();
+        Log.e(MIS_LOGS, "Destroy RegistroVacuna ");
     }
 }

@@ -69,10 +69,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         baseDatos.close();
-
-        Log.e(MIS_LOGS, "el otro aca ");
+        Log.e(MIS_LOGS, "Destroy MainActivity ");
         //cuidado con esto, es para las pruebas de clases
         //cuando temrino de usar la app se elimine la base de datos para que a la proxima vez vuelva a crear toda la base.
-        bdHelper.eliminarBaseDatos();
+        //bdHelper.eliminarBaseDatos();
     }
 }

@@ -5,6 +5,7 @@ public class Constantes {
     //public static final String EXTRA_PRECIO_UNITARIO = "EXTRA_PRECIO_UNITARIO";
 
     public static final int CODIGO_REGISTRO_VACUNA = 1;
+    public static final int CODIGO_HISTORIA_CLINICA = 2;
 
     //public static final String ACCION_CALCULAR_SUBTOTAL = "uy.edu.bios.ventadeproducto.ACCION_CALCULAR_SUBTOTAL";
 
